@@ -9,6 +9,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
+    <groupId>com.lab.lab1</groupId>
     <artifactId>Lab1</artifactId>
 
     <properties>
