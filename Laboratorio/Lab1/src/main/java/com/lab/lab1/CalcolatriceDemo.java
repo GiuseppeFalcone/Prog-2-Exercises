@@ -1,3 +1,4 @@
+package com.lab.lab1;
 // Salviamo il tutto nel file CalcolatriceDemo.java
 
 class Calcolatrice { //classe non eseguibile e non pubblica
@@ -21,7 +22,7 @@ class Calcolatrice { //classe non eseguibile e non pubblica
     }
 
     // pop(): restituisce l'ultima intero dello stack
-    // e lo "cancella" riducendo di 1 la parte di stack utilizzata (variabize size)
+    // e lo "cancella" riducendo di 1 la parte di stack utilizzata (variabile size)
     private int pop() {
         size--;
         return stack[size];
@@ -75,5 +76,8 @@ public class CalcolatriceDemo {
 
         System.out.println("Eseguo istruzioni 99*9*1+ (nove per nove per nove piu' uno) ");
         System.out.println(C.esegui( "99*9*1+" ) + "\n");
+
+        System.out.println("Eseguo istruzioni 52*52**252**+3+ (nove per nove per nove piu' uno) ");
+        System.out.println(C.esegui( "52*52**252**+3+" ) + "\n");
     }
 }

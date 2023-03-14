@@ -5,36 +5,6 @@ public class Underground {
     private int route;
     private int nextStation;
 
-    public String getId(){
-        return id;
-    }
-
-    public int getRoute(){
-        return route;
-    }
-
-    public int getNextStation(){
-        return nextStation;
-    }
-
-    private void setId(String num){
-        id = num;
-    }
-
-    private void setRoute(int route){
-        if (route >= 0) {this.route = route;}
-        else
-            System.out.println("Route number Error\n It has to be positive");
-    }
-
-    private void setNextStation(int nxt){
-        if (nxt >= 0 && nxt <= 9){
-            nextStation = nxt;
-        } else {
-            System.out.println("Error next station number incorrect\nIt has to be between 0 and 9");
-        }
-    }
-
     private Underground(){
         id = null;
         route = -1;
@@ -46,6 +16,35 @@ public class Underground {
         this.route = route;
         nextStation = nxt;
     }
+
+    public String getId(){
+        return id;
+    }
+    private void setId(String num){
+        id = num;
+    }
+
+    public int getRoute(){
+        return route;
+    }
+    private void setRoute(int route){
+        if (route >= 0) {this.route = route;}
+        else
+            System.out.println("Route number Error\n It has to be positive");
+    }
+
+    public int getNextStation(){
+        return nextStation;
+    }
+
+    private void setNextStation(int nxt){
+        if (nxt >= 0 && nxt <= 9){
+            nextStation = nxt;
+        } else {
+            System.out.println("Error next station number incorrect\nIt has to be between 0 and 9");
+        }
+    }
+
 
 
     public String toString(){
