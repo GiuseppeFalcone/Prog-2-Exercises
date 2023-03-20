@@ -28,6 +28,14 @@ class Calcolatrice { //classe non eseguibile e non pubblica
         return stack[size];
     }
 
+    private void stampa(){
+        System.out.println("Lo stack ha dimensione: " + size);
+        System.out.println("I suoi elementi sono: ");
+        for(int indx = 0; indx < size; indx++){
+            System.out.println(stack[indx]);
+        }
+    }
+
     // questo e' un metodo pubblico
     public int esegui(String istruzioni) {
         int numeroIstruzioni = istruzioni.length(); //lunghezza
@@ -46,6 +54,27 @@ class Calcolatrice { //classe non eseguibile e non pubblica
                 int ultimo = pop(); //risultato ultimo calcolo
                 int penultimo = pop(); //risultato penultimo calcolo
                 push(penultimo * ultimo);
+            } else if (c == '-'){
+                int ultimo = pop();
+                int penultimo = pop();
+                push(penultimo - ultimo);
+            } else if (c == '/'){
+                int ultimo = pop();
+                int penultimo = pop();
+                push(penultimo / ultimo);
+            } else if (c == '%'){
+                int ultimo = pop();
+                int penultimo = pop();
+                push(penultimo % ultimo);
+            } else if (c == '#'){
+                stampa();
+            } else if (c == 'D' && istruzioni.substring(pc).equals("Dispari")){
+                int ultimo = pop();
+                push((2*ultimo)+1);
+            } else if (c == 'O' && istruzioni.substring(pc).equals("Odd")){
+                int ultimo = pop();
+                if (ultimo % 2 == 0) { push(0);}
+                else {push(1);}
             }
 
             pc++; // passiamo alla prossima istruzione
@@ -61,10 +90,10 @@ class Calcolatrice { //classe non eseguibile e non pubblica
 public class CalcolatriceDemo {
     public static void main(String[] args) {
         Calcolatrice C = new Calcolatrice();
-
+/*
         System.out.println( "Eseguo istruzioni 23+ (due piu' tre)" );
         System.out.println( C.esegui( "23+" ) + "\n" );
-        
+
         System.out.println( "Eseguo istruzioni 23* (due per tre) ");
         System.out.println(C.esegui( "23*" ) + "\n");
 
@@ -79,5 +108,32 @@ public class CalcolatriceDemo {
 
         System.out.println("Eseguo istruzioni 52*52**252**+3+ (nove per nove per nove piu' uno) ");
         System.out.println(C.esegui( "52*52**252**+3+" ) + "\n");
+
+        System.out.println("Eseguo istruzioni (15+16)*17");
+        System.out.println(C.esegui( "53*44*+98+*" ) + "\n");
+
+        System.out.println("Eseguo istruzioni 10!");
+        System.out.println(C.esegui( " 52987654321**********" ) + "\n");
+
+        System.out.println("Eseguo istruzioni per calcolare un numero negativo e bisogna fare overflow\n" +
+                "Dal momento che int è 32 bit, bisogna moltiplicare 2 per 32 volte");
+        System.out.println(C.esegui("22222222222222222222222222222222#*#******************************#") + "\n");
+/*
+        System.out.println("Eseguo istruzioni 12-");
+        System.out.println(C.esegui( "12-" ) + "\n");
+
+        System.out.println("Eseguo istruzioni 32/");
+        System.out.println(C.esegui( "32/" ) + "\n");
+
+        System.out.println("Eseguo istruzioni 53%");
+        System.out.println(C.esegui( "#53%#" ) + "\n");
+        System.out.println("Eseguo istruzioni 2Dispari");
+        System.out.println(C.esegui( "2Dispari" ) + "\n");
+*/
+        System.out.println("Eseguo istruzioni 2Odd");
+        System.out.println(C.esegui( "2Odd" ) + "\n");
+
+        System.out.println("Eseguo istruzioni 3Odd");
+        System.out.println(C.esegui( "3Odd" ) + "\n");
     }
 }
