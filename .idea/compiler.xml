@@ -6,25 +6,28 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Lab 2" />
-        <module name="Lecture 1" />
-        <module name="Lecture 2" />
-        <module name="Lecture 3" />
-        <module name="Lecture 4" />
-        <module name="Lezione 5" />
+        <module name="Lab1" />
+        <module name="Lab2" />
+        <module name="Lecture8" />
+        <module name="Lecture9" />
+        <module name="Lecture10" />
+        <module name="Lecture1" />
+        <module name="Lecture2" />
+        <module name="Lacture5" />
+        <module name="Lecture3" />
+        <module name="Lecture4" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="lab" target="1.5" />
       <module name="Lab 1" target="19" />
       <module name="Lab 2" target="19" />
-      <module name="Laboratorio" target="19" />
+      <module name="Lacture 5" target="19" />
       <module name="Lecture 1" target="19" />
       <module name="Lecture 2" target="19" />
       <module name="Lecture 3" target="19" />
       <module name="Lecture 4" target="19" />
-      <module name="Lezione 5" target="19" />
-      <module name="Teoria" target="19" />
+      <module name="Lecture 5" target="19" />
     </bytecodeTargetLevel>
   </component>
 </project>

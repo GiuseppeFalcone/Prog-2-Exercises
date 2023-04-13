@@ -1,4 +1,7 @@
 package com.lab.lab2;
+
+import java.util.Scanner;
+
 // Classe per modellare uno stack con capacita` finita di numeri
 // interi
 public class Stack
@@ -61,5 +64,82 @@ public class Stack
         }
 
         return true;
+    }
+
+    public static void main(String[] args) {
+        Stack calc = new Stack(10);
+
+        String instructions = "32*4+";
+        int ix = 0;
+        while (ix < instructions.length()){
+            char c = instructions.charAt(ix);
+            if (c >= '0' && c <= '9'){
+                calc.push(c - '0');
+            }else if (c == '+'){
+                int num1 = calc.pop();
+                int num2 = calc.pop();
+                calc.push(num1 + num2);
+            } else if (c == '*') {
+                int num1 = calc.pop();
+                int num2 = calc.pop();
+                calc.push(num1 * num2);
+            } else if (c == '-') {
+                int num2 = calc.pop();
+                int num1 = calc.pop();
+                calc.push(num1 - num2);
+            } else if (c == '/'){
+                int num2 = calc.pop();
+                int num1 = calc.pop();
+                calc.push(num1 / num2);
+            } else if (c == '%'){
+                int num2 = calc.pop();
+                int num1 = calc.pop();
+                calc.push(num1 % num2);
+            } /*else if (c == '#') {
+                print();
+            }*/
+            ix++;
+        }
+        int result = calc.pop();
+
+        Stack calc2 = new Stack(9);
+
+        String instructions2 = "32*4+";
+        ix = 0;
+        while (ix < instructions2.length()){
+            char c = instructions2.charAt(ix);
+            if (c >= '0' && c <= '9'){
+                calc2.push(c - '0');
+            }else if (c == '+'){
+                int num1 = calc2.pop();
+                int num2 = calc2.pop();
+                calc2.push(num1 + num2);
+            } else if (c == '*') {
+                int num1 = calc2.pop();
+                int num2 = calc2.pop();
+                calc2.push(num1 * num2);
+            } else if (c == '-') {
+                int num2 = calc2.pop();
+                int num1 = calc2.pop();
+                calc2.push(num1 - num2);
+            } else if (c == '/'){
+                int num2 = calc2.pop();
+                int num1 = calc2.pop();
+                calc2.push(num1 / num2);
+            } else if (c == '%'){
+                int num2 = calc2.pop();
+                int num1 = calc2.pop();
+                calc2.push(num1 % num2);
+            } /*else if (c == '#') {
+                print();
+            }*/
+            ix++;
+        }
+        int result2 = calc2.pop();
+
+        System.out.println(calc.equals(calc2));
+
+
+
     }
 }
