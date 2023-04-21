@@ -1,5 +1,7 @@
 package com.teoria.nove.codeInClass;
 
+import javax.sound.midi.Soundbank;
+
 public class NodeUtil {
 
     /**
@@ -142,6 +144,11 @@ public class NodeUtil {
      * @return vero se trovato
      */
     private static boolean member(Node node, int value) {
+        while (node != null){
+            // a ogni passo se trovo x restituisco true
+            if (node.getElem() == value) return true;
+            else node = node.getNext();
+        }
         return false;
     }
 
@@ -153,7 +160,10 @@ public class NodeUtil {
      * @return see method length
      */
     private static boolean member_rec(Node node, int value) {
-        return false;
+        if (node == null){
+            return false;
+        }
+        return (member_rec(node.getNext(), value) || node.getElem() == value);
     }
 
     /**
@@ -164,7 +174,12 @@ public class NodeUtil {
      * @return toString({ 10, 20, 30, 40 }) vale "10 20 30 40"
      */
     private static String toString(Node node) {
-        return "";
+        String res = " ";
+        while (node != null){
+            res = res.concat(String.valueOf(node.getElem()));
+            node = node.getNext();
+        }
+        return res;
     }
 
 
@@ -177,7 +192,12 @@ public class NodeUtil {
      * @return true se la lista è sorted, false altrimenti
      */
     private static boolean sorted(Node node) {
-        return false;
+        boolean isSorted = node != null;
+        while (isSorted && node.getNext() != null){
+            if(node.getElem() >= node.getNext().getElem()) isSorted = false;
+            node = node.getNext();
+        }
+        return isSorted;
     }
 
     /**
@@ -191,7 +211,14 @@ public class NodeUtil {
      * @return vero o falso
      */
     private static boolean equals(Node node_p, Node node_q) {
-        return false;
+        while (node_p != null && node_q != null){
+            if (node_p.getElem() != node_q.getElem()) return false;
+            else {
+                node_p = node_p.getNext();
+                node_q = node_q.getNext();
+            }
+        }
+        return true;
     }
 
 

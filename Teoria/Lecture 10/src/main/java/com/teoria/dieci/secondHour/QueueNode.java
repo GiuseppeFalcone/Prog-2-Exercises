@@ -1,19 +1,19 @@
 package com.teoria.dieci.secondHour;
 
 public class QueueNode<T> {
-    QueueNode next;
+    QueueNode<T> next;
     T elem;
 
-    public QueueNode(T elem, QueueNode next) {
+    public QueueNode(T elem, QueueNode<T> next) {
         this.next = next;
         this.elem = elem;
     }
 
-    public QueueNode getNext() {
+    public QueueNode<T> getNext() {
         return next;
     }
 
-    public void setNext(QueueNode next) {
+    public void setNext(QueueNode<T> next) {
         this.next = next;
     }
 

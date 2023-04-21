@@ -9,7 +9,7 @@ public class Queue<T> {
         last = null;
     }
 
-    void push(T ct){
+    public void push(T ct){
         QueueNode<T> qn = new QueueNode<T>(ct, null);
         if (first==null) {
             first = qn;
@@ -18,11 +18,19 @@ public class Queue<T> {
             last.setNext(qn);
     }
 
-    T pop(){
+    public T pop(){
         QueueNode<T> aa = first;
         if (first==null)
             return null;
         first = first.getNext();
         return aa.getElem();
+    }
+
+    public void Printing(){
+        QueueNode<T> node = first;
+        while(node != null){
+            System.out.println(node.getElem() + " ");
+            node = node.getNext();
+        }
     }
 }

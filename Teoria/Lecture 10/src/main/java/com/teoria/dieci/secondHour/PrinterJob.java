@@ -2,11 +2,11 @@ package com.teoria.dieci.secondHour;
 
 public class PrinterJob {
     String id;
-    String testo;
+    String text;
 
     public PrinterJob(String id, String testo) {
         this.id = id;
-        this.testo = testo;
+        this.text = testo;
     }
 
     public String getId() {
@@ -17,11 +17,11 @@ public class PrinterJob {
         this.id = id;
     }
 
-    public String getTesto() {
-        return testo;
+    public String getText() {
+        return text;
     }
 
-    public void setTesto(String testo) {
-        this.testo = testo;
+    public void setText(String text) {
+        this.text = text;
     }
 }

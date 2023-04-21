@@ -1,4 +1,4 @@
-package com.teoria.nove.startingCode;
+package com.teoria.nove.codeInClass;
 
 public class NodeUtil {
 

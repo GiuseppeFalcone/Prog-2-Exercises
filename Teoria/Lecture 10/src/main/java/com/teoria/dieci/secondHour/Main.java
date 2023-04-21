@@ -12,5 +12,9 @@ public class Main {
         myQueue2.push(new PrinterJob("111", "blah blah"));
         myQueue2.push(new PrinterJob("2222", "blah blah"));
         myQueue2.push(new PrinterJob("3333", "blah blah"));
+
+        myQueue.Printing();
+        myQueue2.Printing();
+
     }
 }
