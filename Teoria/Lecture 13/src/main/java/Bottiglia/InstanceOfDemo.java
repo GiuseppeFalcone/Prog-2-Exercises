@@ -12,7 +12,7 @@ public class InstanceOfDemo{
    BottigliaConTappo u = null;
 
    System.out.println( "a10 instanceof Bottiglia.BottigliaConTappo = " +
-                     (a10 instanceof BottigliaConTappo)); // true
+                     ( a10 instanceof BottigliaConTappo)); // true
    System.out.println( "b10 instanceof Bottiglia.BottigliaConTappo = " +
                      (b10 instanceof BottigliaConTappo)); // false
    System.out.println( "u=null instanceof Bottiglia.BottigliaConTappo = " +

@@ -1,4 +1,4 @@
-//Per la sottoclasse “Quadrato” di “Figura”, il metodo draw disegna in g un quadrato di lato dato, orizzontale e centrato con gli assi (includiamo una figura alla fine della lezione). Usiamo i metodi della classe Graphics: setColor, drawLine, drawOval.
+package Grafica;//Per la sottoclasse “Quadrato” di “Figura”, il metodo draw disegna in g un quadrato di lato dato, orizzontale e centrato con gli assi (includiamo una figura alla fine della lezione). Usiamo i metodi della classe Graphics: setColor, drawLine, drawOval.
 
 // Quadrato.java  quadrato = una possibile forma di una Figura
 // Definiamo Quadrato come una sottoclasse di Figura

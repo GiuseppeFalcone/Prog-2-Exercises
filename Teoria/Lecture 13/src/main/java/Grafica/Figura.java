@@ -1,4 +1,4 @@
-// Graphics = classe del pacchetto awt, con gli oggetti grafici
+package Grafica;// Graphics = classe del pacchetto awt, con gli oggetti grafici
 // JFrame = classe del pacchetto swing, con "finestre" fornite di:
 //            border + title + close-iconify button
 // Figura = oggetti con un metodo "draw" per disegnare una figura
