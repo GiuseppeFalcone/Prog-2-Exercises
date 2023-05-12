@@ -1,4 +1,4 @@
-package com.lab.lab2;
+package com.lab.quattro;
 
 public class MutablePoint {
     private int xCor;

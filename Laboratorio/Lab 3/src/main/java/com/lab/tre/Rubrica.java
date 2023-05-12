@@ -85,19 +85,43 @@ public  class Rubrica {
         if (presente(n)) 
             return false;      // rubrica contiene n: fallimento
         if (piena()){
-
+            contatti = raddoppia();
         }
 
         //aggiungo il nuovo contatto nella prima posizione disponibile
-        contatti[numContatti] = new Contatto(n,e);        
+        boolean aggiunto = false;
+        int indx = numContatti - 1;
+        while (!aggiunto && indx >= 0){
+            String nameToCompare = contatti[indx].getNome();
+            if (n.compareToIgnoreCase(nameToCompare) < 0){
+                spostaContatti(indx);
+                contatti[indx] = new Contatto(n, e);
+                aggiunto = true;
+            }
+        }
+        //contatti[numContatti] = new Contatto(n,e);
         ++numContatti; //aggiorno il numero degli elementi
 
         return true; //successo
     }
 
-    private void raddoppia(){
+    private void spostaContatti(int startingPoint){
+        if (piena())
+            contatti = raddoppia();
+        Contatto tmp = contatti[startingPoint];
+        for (int indx = startingPoint; indx < numContatti; indx++){
+            tmp = contatti[indx + 1];
+            contatti[indx + 1] = contatti[indx];
+        }
+        scriviOutput();
+    }
+
+    private Contatto[] raddoppia(){
         Contatto[] tmp = new Contatto[numContatti * 2];
-        copia();
+        for (int indx = 0; indx < contatti.length; indx++){
+            tmp[indx] = contatti[indx];
+        }
+        return tmp;
     }
 
     // Rimuovi un contatto di nome @n, e riposiziona tutti i

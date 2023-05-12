@@ -1,5 +1,7 @@
 package com.lab.tre;
 
+import java.security.cert.CertPath;
+
 //RubricaDemo.java
 public class RubricaDemo {
     public static void main(String[] args) {
@@ -28,5 +30,18 @@ public class RubricaDemo {
         System.out.println("(5) Modifico b@ditta in b2@ditta: successo = "
                            + R.cambiaEmail("b2", "b2@ditta"));
         R.scriviOutput();
+
+        Rubrica Contacts = new Rubrica(2);
+        Contacts.aggiungi("a", "a@ditta");
+        Contacts.aggiungi("b", "b@ditta");
+        Contacts.scriviOutput();
+        System.out.println("num contatti Prima Raddoppio" + Contacts.getNumContatti() + '\n');
+
+        Contacts.aggiungi("c", "c@ditta");
+        Contacts.scriviOutput();
+
+        System.out.println("num contatti Dopo Raddoppio" + Contacts.getNumContatti());
+
     }
+
 }
